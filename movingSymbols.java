@@ -21,7 +21,7 @@ public class movingSymbols{
             left[i] = i;
             right[i] = width - 1 - i;
             printLine2(width, left[i], right[i], counter);
-            Thread.sleep(20); 
+            Thread.sleep(8); 
         }
     }
 
@@ -31,7 +31,7 @@ public class movingSymbols{
             left[i] = i;
             right[i] = width - 1 - i;
             printLine2(width, left[i], right[i], counter);
-            Thread.sleep(20);
+            Thread.sleep(8);
         }
     }
 
@@ -49,16 +49,14 @@ public class movingSymbols{
         for (int j = 0; j < width; j++) line[j] = ' ';
         if (counter%13 <=7){//get larger
         for (int step_increase = 0; step_increase <= counter%13; step_increase++){
-        line [left + step_increase] = '*';
-        line[right - step_increase] = '*';
-        }
-        }else{//get smaller
-        for (int step_increase = 13 - counter%13; step_increase > 0; step_increase--){
             line [left + step_increase] = '*';
             line[right - step_increase] = '*';
-        }
-        }
-
+        }}else{//get smaller
+        for (int step_increase = 13 - counter%13; step_increase > 0; step_increase--){
+            line[left + step_increase] = '*';
+            line[right - step_increase] = '*';
+        }}
         System.out.println(new String(line));
     }
 }
+
