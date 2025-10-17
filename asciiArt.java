@@ -17,7 +17,7 @@ public class asciiArt{
             }
         }
 
-        // same shape as before
+        // spider shape
         spider[0][4] = '('; spider[0][5] = '('; spider[0][6] = '(';
         spider[0][20] = ')'; spider[0][21] = ')'; spider[0][22] = ')';
 
