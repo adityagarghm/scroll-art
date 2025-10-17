@@ -6,14 +6,14 @@ public class asciiArt{
         }     
     }
 
-    // 🕸️ builds and returns one spider shape
+    // builds and returns one spider shape
     public static char[][] makeSpider() {
         char[][] spider = new char[13][28];
 
         // fill with spaces
-        for (int row = 0; row < 13; row++) {
-            for (int col = 0; col < 28; col++) {
-                spider[row][col] = ' ';
+        for (int amountRows = 0; amountRows < 13; amountRows++) {
+            for (int amountColumns = 0; amountColumns < 28; amountColumns++) {
+                spider[amountRows][amountColumns] = ' ';
             }
         }
 
@@ -65,24 +65,24 @@ public class asciiArt{
         return spider;
     }
 
-    // 🕷️ prints multiple spiders side by side, each inside a box of *
+    // prints multiple spiders side by side, each inside a box of *
     public static void printRowOfSpiders(char[][] spider, int spiderCount) throws InterruptedException {
         int height = spider.length;          // number of rows in one spider
         int width = spider[0].length;        // number of columns in one spider
 
         // loop through each row (plus one top and one bottom border)
-        for (int row = 0; row < height + 2; row++) {
-            for (int s = 0; s < spiderCount; s++) {           // repeat this row for each spider in the row
-                 if (row == 0 || row == height + 1) {                // if we’re at the top or bottom border of the spider box
-                    for (int col = 0; col < width + 2; col++) {
+        for (int rowCount = 0; rowCount < height + 2; rowCount++) {
+            for (int spiderPrint = 0; spiderPrint < spiderCount; spiderPrint++) {           // repeat this row for each spider in the row
+                 if (rowCount == 0 || rowCount == height + 1) {                // if we’re at the top or bottom border of the spider box
+                    for (int columnCount = 0; columnCount < width + 2; columnCount++) {
                         System.out.print('*');//print stars at top/bottom of row
                     }
                 } else {
                     // print left border
                     System.out.print('*');
                     // print spider contents for this row
-                    for (int col = 0; col < width; col++) {
-                        System.out.print(spider[row - 1][col]);  
+                    for (int columnSpider = 0; columnSpider < width; columnSpider++) {
+                        System.out.print(spider[rowCount - 1][columnSpider]);  
                     }
                     // print right border
                     System.out.print('*');
