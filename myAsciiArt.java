@@ -2,10 +2,10 @@ import java.util.Random;
 public class myAsciiArt{
 
     public static void main(String[] args) throws InterruptedException{
-        AsciiArt[] images = {new AsciiArt(makeSpider()), new AsciiArt(getBoat()), new AsciiArt(getElephant()), new AsciiArt(getCloud()), new AsciiArt(getButterfly())}; 
+        AsciiArt[] images = {new AsciiArt(makeSpider()), new AsciiArt(getBoat()), new AsciiArt(getElephant()), new AsciiArt(getCloud()), new AsciiArt(getButterfly()), new AsciiArt(getBunny())}; 
     while (true){
         Random r = new Random();
-        int x = r.nextInt(0,5);
+        int x = r.nextInt(0,6);
        //char[][] img = images[0].getImg();       
         printRowOfSpiders(images[x]);   // print 4 spiders side by side
 
@@ -402,6 +402,55 @@ public class myAsciiArt{
 
         return img;
     }
+ static char[][] getBunny() {
+        char[][] img = new char[7][15];
+        // fill with empty space
+        for (int y = 0; y < 7; y++) {
+            for (int x = 0; x < 15; x++) {
+                img[y][x] = ' ';
+            }
+        }
+        // then fill individual characters
+        img[1][7] = '*';
+        img[2][3] = '*';
+        img[2][5] = '^';
+        img[2][6] = '_';
+
+        img[2][7] = '_';
+        img[2][8] = '_';
+
+        img[2][9] = '^';
+        img[2][10] = '!';
+        img[2][12] = '*';
+        img[3][1] = '*';
+
+        img[3][3] = '=';
+        img[3][4]='(';
+        img[3][5] = '●';
+        img [3][7]='^';
+        img[3][9] = '●';
+        img[3][10] = ')';
+        img[3][11] = '=';
+        img[3][14]='*';
+
+        img[4][3]='o';
+        img[4][4]='/';
+        img[4][10]='\\';
+        img[4][11]='o';
+        img[4][12]='♥';
+
+        img[5][3]='/';
+        img[5][11]='\\';
+
+        img[6][2]='(';
+        img[6][4]='_';
+        img[6][6]='_';
+        img[6][8]='_';
+        img[6][10]='_';
+        img[6][12]=')';
+        return img;
+    }
+
 
     // prints multiple spiders side by side, each inside a box of *
     public static void printRowOfSpiders(AsciiArt spider) throws InterruptedException {
