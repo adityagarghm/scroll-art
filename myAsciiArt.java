@@ -2,12 +2,12 @@ import java.util.Random;
 public class myAsciiArt{
 
     public static void main(String[] args) throws InterruptedException{
-        AsciiArt[] images = {new AsciiArt(makeSpider()), new AsciiArt(getBoat())}; 
+        AsciiArt[] images = {new AsciiArt(makeSpider()), new AsciiArt(getBoat()), new AsciiArt(getElephant()), new AsciiArt(getCloud()), new AsciiArt(getButterfly())}; 
     while (true){
         Random r = new Random();
-        int x = r.nextInt(0,3);
+        int x = r.nextInt(0,5);
        //char[][] img = images[0].getImg();       
-        printRowOfSpiders(images[x], 4);   // print 4 spiders side by side
+        printRowOfSpiders(images[x]);   // print 4 spiders side by side
 
         }     
     }
@@ -228,13 +228,186 @@ public class myAsciiArt{
 
         return img;
     }
+    static char[][] getElephant() {
+        char[][] img = new char[9][20];
+        // fill with empty space
+        for (int y = 0; y < 9; y++) {
+            for (int x = 0; x < 20; x++) {
+                img[y][x] = ' ';
+            }
+        }
+        // then fill individual characters
+        img[0][14] = '_';
+        img[1][5] = '(';
+        img[1][6] = ')';
+        img[1][13] = '|';
+        img[1][14] = '~';
+        img[1][15] = '|';
+        img[2][4] = '/';
+        img[2][5] = '|';
+        img[2][6] = '|';
+        img[2][7] = '\\';
+        img[2][13] = '|';
+        img[2][14] = '~';
+        img[2][15] = '|';
+        img[2][10] = '_';
+        img[2][11] = '_';
+        img[3][5] = '/';
+        img[3][6] = '\\';
+        img[3][9] = '/';
+        img[3][12] = '\\';
+        img[3][13] = '~';
+        img[3][14] = '~';
+        img[3][15] = '~';
+        img[3][16] = '\\';
+        img[2][17] = '_';
+        img[2][18] = '_';
+        img[3][19] = '\\';
+        img[4][3] = ',';
+        img[4][4] = '-';
+        img[4][5] = '-';
+        img[4][6] = '-';
+        img[4][7] = '-';
+        img[4][8] = '(';
+        img[4][13] = '-';
+        img[4][15] = '-';
+        img[4][19] = ')';
+        img[5][2] = '/';
+        img[5][18] = '/';
+        img[6][1] = '/';
+        img[6][3] = '|';
+        img[6][12] = '(';
+        img[6][13] = '\\';
+        img[6][16] = '|';
+        img[6][17] = '(';
+        img[7][0] = '^';
+        img[7][3] = '\\';
+        img[7][0] = '^';
+        img[7][7] = '/';
+        img[7][8] = '_';
+        img[7][9] = '_';
+        img[7][10] = '\\';
+        img[7][13] = '/';
+        img[7][14] = '\\';
+        img[7][16] = '|';
+        img[8][4] = '|';
+        img[8][5] = '_';
+        img[8][6] = '_';
+        img[8][7] = '|';
+        img[8][10] = '|';
+        img[8][11] = '_';
+        img[8][12] = '_';
+        img[8][13] = '|';
+        img[8][14] = '-';
+        img[8][15] = '"';
+
+        return img;
+    }
+    public static char[][] getCloud() {
+
+        int cloudheight = 9;
+        int cloudwidth = 10;
+
+        char[][] cloudimg = new char[cloudheight+1][cloudwidth+1];
+        for (int y = 0; y <= cloudheight; y++) {
+            for (int x = 0; x <= cloudwidth; x++) {
+                cloudimg[y][x] = ' ';
+            }
+        }
+
+        for (int i = 2; i <= 9; i++) {
+            cloudimg[i][1] = ':';
+        }
+        cloudimg[1][2] = '_';
+        cloudimg[2][3] = ':';
+        cloudimg[2][4] = '.';
+        cloudimg[3][5] = ':';
+        cloudimg[4][4] = '*';
+        cloudimg[5][5] = ':';
+        cloudimg[6][6] = '*';
+        cloudimg[7][6] = ';';
+        cloudimg[8][4] = '.';
+        cloudimg[8][5] = '*';
+        cloudimg[9][2] = ':';
+        cloudimg[9][3] = '*';
+
+        return cloudimg;
+
+    }
+    static char[][] getButterfly() {
+        char[][]img=new char [15][15];
+        for(int y=0; y<15; y++ ){
+            for(int x=0;x<15;x++){
+                img[y][x]=' ';
+            }
+        }
+        //left wing
+        img[1][5]='♥';
+        img[1][6]='♥';
+        img[1][10]='♥';
+        img[1][11]='♥';
+
+        img[2][4]='♥';
+        img[2][7]='♥';
+        img[2][9]='♥';
+        img[2][12]='♥';
+
+        img[3][4]='♥';
+        img[3][6]='o';
+        img [3][10]='o';
+        img[3][12]='♥';
+        img[3][8]='♥';
+
+        img [4][5]='♥';
+        img[4][8]='-';
+        img[4][11]='♥';
+
+        img[5][6]='♥';
+        img[5][10]='♥';
+
+        img [6][7]='♥';
+        img [6][9]='♥';
+
+        img[7][8]='♥';
+
+        //right wing
+
+        img[14][5]='♥';
+        img[14][6]='♥';
+        img[14][10]='♥';
+        img[14][11]='♥';
+
+        img[13][4]='♥';
+        img[13][7]='♥';
+        img[13][9]='♥';
+        img[13][12]='♥';
+
+        img[12][4]='♥';
+        img[12][6]='o';
+        img [12][10]='o';
+        img[12][12]='♥';
+        img[12][8]='♥';
+
+        img [11][5]='♥';
+        img[11][8]='-';
+        img[11][11]='♥';
+
+        img[10][6]='♥';
+        img[10][10]='♥';
+
+        img [9][7]='♥';
+        img [9][9]='♥';
+
+        img[8][8]='♥';
+
+        return img;
+    }
 
     // prints multiple spiders side by side, each inside a box of *
-    public static void printRowOfSpiders(AsciiArt spider, int spiderCount) throws InterruptedException {
+    public static void printRowOfSpiders(AsciiArt spider) throws InterruptedException {
         int height = spider.height;          // number of rows in one spider
-        int width = spider.width;   // number of columns in one spider
-        double unroundedSpidercount =  120/width;     
-        long spidercount = Math.round(unroundedSpidercount);
+        int width = spider.width;   // number of columns in one spider    
+        long spiderCount =(long) Math.floor(120/width);
 
         // loop through each row (plus one top and one bottom border)
         for (int rowCount = 0; rowCount < height + 2; rowCount++) {
